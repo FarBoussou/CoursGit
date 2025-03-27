@@ -3,68 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire d'inscription</title>
-    <script>
-        // Script pour vérifier que les mots de passe correspondent
-        function validateForm() {
-            var motdepasse = document.getElementById("motdepasse").value;
-            var confirmMotdepasse = document.getElementById("confirm_motdepasse").value;
-            
-            if (motdepasse !== confirmMotdepasse) {
-                alert("Les mots de passe ne correspondent pas !");
-                return false;  // Empêche l'envoi du formulaire
-            }
-            return true;  // Si tout va bien, soumettre le formulaire
+    <title>Menu Déroulant Simple</title>
+    <style>
+        /* Style général de la page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-    </script>
+
+        /* Style du conteneur du menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style du bouton du menu */
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Changer la couleur du bouton au survol */
+        .dropbtn:hover {
+            background-color: #45a049;
+        }
+
+        /* Style du contenu du menu déroulant (caché par défaut) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        /* Style des liens dans le menu déroulant */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Changer la couleur des liens au survol */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Afficher le menu au survol du bouton */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <h2>Formulaire d'inscription</h2>
 
-    <form action="/submit" method="POST" onsubmit="return validateForm()">
-        <!-- Nom -->
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
-        <br><br>
+    <h2>Menu Déroulant Simple</h2>
 
-        <!-- Prénom -->
-        <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom" required>
-        <br><br>
-
-        <!-- Email -->
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
-
-        <!-- Mot de passe -->
-        <label for="motdepasse">Mot de passe :</label>
-        <input type="password" id="motdepasse" name="motdepasse" required>
-        <br><br>
-
-        <!-- Confirmer le mot de passe -->
-        <label for="confirm_motdepasse">Confirmer le mot de passe :</label>
-        <input type="password" id="confirm_motdepasse" name="confirm_motdepasse" required>
-        <br><br>
-
-        <!-- Choisir la langue -->
-        <label for="langue">Langue préférée :</label>
-        <select id="langue" name="langue">
-            <option value="fr">Français</option>
-            <option value="en">Anglais</option>
-            <option value="es">Espagnol</option>
-        </select>
-        <br><br>
-
-        <!-- Accepter les conditions -->
-        <label>
-            <input type="checkbox" name="conditions" required> J'accepte les conditions d'utilisation.
-        </label>
-        <br><br>
-
-        <!-- Bouton de soumission -->
-        <button type="submit">S'inscrire</button>
-    </form>
+    <!-- Menu déroulant -->
+    <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+            <a href="#">Accueil</a>
+            <a href="#">Services</a>
+            <a href="#">À propos</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
 
 </body>
 </html>
