@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire d'inscription</title>
+    <script>
+        // Script pour vérifier que les mots de passe correspondent
+        function validateForm() {
+            var motdepasse = document.getElementById("motdepasse").value;
+            var confirmMotdepasse = document.getElementById("confirm_motdepasse").value;
+            
+            if (motdepasse !== confirmMotdepasse) {
+                alert("Les mots de passe ne correspondent pas !");
+                return false;  // Empêche l'envoi du formulaire
+            }
+            return true;  // Si tout va bien, soumettre le formulaire
+        }
+    </script>
 </head>
 <body>
     <h2>Formulaire d'inscription</h2>
 
-    <form action="/submit" method="POST">
+    <form action="/submit" method="POST" onsubmit="return validateForm()">
         <!-- Nom -->
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" required>
