@@ -3,14 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulaire HTML</title>
 </head>
 <body>
-    <h1>
-        Cours Git 1
-    </h1>
-    <h1>
-        Cours Git 1
-    </h1>
+    <h1>Formulaire d'inscription</h1>
+    <form action="/submit" method="POST">
+        <!-- Champ pour le nom -->
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+        <br><br>
+
+        <!-- Champ pour le prénom -->
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
+        <br><br>
+
+        <!-- Champ pour l'email -->
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <!-- Champ pour le mot de passe -->
+        <label for="motdepasse">Mot de passe :</label>
+        <input type="password" id="motdepasse" name="motdepasse" required>
+        <br><br>
+
+        <!-- Champ pour la confirmation du mot de passe -->
+        <label for="confirmation">Confirmer le mot de passe :</label>
+        <input type="password" id="confirmation" name="confirmation" required>
+        <br><br>
+
+        <!-- Champ pour le sexe (radio buttons) -->
+        <label>Sexe :</label>
+        <input type="radio" id="homme" name="sexe" value="homme">
+        <label for="homme">Homme</label>
+        <input type="radio" id="femme" name="sexe" value="femme">
+        <label for="femme">Femme</label>
+        <br><br>
+
+        <!-- Champ pour la date de naissance -->
+        <label for="date_naissance">Date de naissance :</label>
+        <input type="date" id="date_naissance" name="date_naissance">
+        <br><br>
+
+        <!-- Champ pour le pays -->
+        <label for="pays">Pays :</label>
+        <select id="pays" name="pays">
+            <option value="france">France</option>
+            <option value="belgique">Belgique</option>
+            <option value="canada">Canada</option>
+            <option value="autre">Autre</option>
+        </select>
+        <br><br>
+
+        <!-- Champ pour les centres d'intérêts (cases à cocher) -->
+        <label>Centres d'intérêt :</label>
+        <input type="checkbox" id="sports" name="interets" value="sports">
+        <label for="sports">Sports</label>
+        <input type="checkbox" id="lecture" name="interets" value="lecture">
+        <label for="lecture">Lecture</label>
+        <input type="checkbox" id="musique" name="interets" value="musique">
+        <label for="musique">Musique</label>
+        <br><br>
+
+        <!-- Champ pour le message -->
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea>
+        <br><br>
+
+        <!-- Champ pour le bouton d'envoi -->
+        <button type="submit">Envoyer</button>
+    </form>
 </body>
 </html>
